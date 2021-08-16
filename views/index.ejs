@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row" style="margin-top: 5em;">
+        <div class="col card1">
+            <center>
+                <h4>Add a new File</h4></center>
+                <div class="row" style="margin-top: 2em;">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <form id="form" action="/add" enctype="multipart/form-data" method="post" onsubmit="return addCheck()">
+                            <div class="form-group input">
+                                <input type="text" name="filename" id="filename" class="form-control" placeholder="File name">
+                                <label for="filename" class="form-text">Enter a unique filename</label>
+                            </div>
+                            <div class="form-group input">
+                                <select name="type" id="type" class="form-control">
+                                    <option value="Academic Certificate">Academic Certificate</option>
+                                    <option value="Birth Certificate">Birth Certificate</option>
+                                </select>
+                                <label for="type" class="form-text">Choose type of Certificate to add</label>
+                            </div>
+                            <input type="file" name="file" id="file" class="input form-control">
+                            <input type="submit" value="Add" class="input btn active-btn">
+                        </form>
+                    </div>
+                    <div class="col-md-3"></div>
+
+                </div>
+            
+        </div>
+    </div>
+
+    
+</div>
+
+<script>
+
+    let filename = document.getElementById('filename')
+    let type = document.getElementById('type')
+    let file = document.getElementById('file')
+
+    let form = document.getElementById('form')
+
+    form.reset()
+
+    function addCheck() {
+        
+        if (filename.value == '') {
+            alert('Enter filename')
+            return false
+        }
+        else if (type.value == '') {
+            alert('Select a file type')
+            return false
+        }
+        else if (!file.value) {
+            alert('File not choosen')
+            return false
+        } else return true
+    }
+
+    function verify(){
+        window.location.href = '/verify'
+    }
+
+    function vieW(){
+        window.location.href = '/view'
+    }
+
+
+</script>

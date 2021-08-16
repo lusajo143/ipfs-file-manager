@@ -1,0 +1,40 @@
+<div class="container">
+
+    <div class="row" style="margin-top: 5em;">
+        <div class="col card1">
+            <center>
+                <h4>Verify Document</h4></center>
+                <div class="row" style="margin-top: 2em;">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <form id="form" action="/verify" enctype="multipart/form-data" method="post" onsubmit="return verifyCheck()">
+                            <input type="file" name="file" id="file" class="input form-control">
+                            <input type="submit" value="Add" class="input btn active-btn">
+                        </form>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            
+        </div>
+    </div>
+
+    
+</div>
+
+<script>
+    let file = document.getElementById('file')
+
+    let form = document.getElementById('form')
+
+    form.reset()
+
+    function verifyCheck() {
+        
+        if (!file.value) {
+            alert('File not choosen')
+            return false
+        } else return true
+    }
+
+
+</script>
